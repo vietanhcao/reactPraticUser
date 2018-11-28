@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+    kiemtratrangthai(){
+        if (this.props.hienthiForm){
+            return <div onClick={this.props.trangthai} className="btn btn-info btn-block">Thêm mới</div>;
+        }else{
+            return <div onClick={this.props.trangthai} className="btn btn-secondary btn-block">Đóng lại</div>;
+        }
+    }
     render() {
         return (
             <div className="col-12">
@@ -10,8 +17,10 @@ class Search extends Component {
                         <div className="btn btn-info"> Tim </div>
                     </div>
                     <div>
-                        <div onClick={this.props.trangthai} className="btn btn-info btn-block">Thêm mới</div>
-                        <div onClick={this.props.trangthai}  className="btn btn-secondary btn-block">Đóng lại</div>
+                        {
+                            this.kiemtratrangthai()
+                        }
+                        
                     </div>
                 </div>
             </div>

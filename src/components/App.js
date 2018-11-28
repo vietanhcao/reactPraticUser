@@ -15,6 +15,9 @@ class App extends Component {
     }
 
   }
+  getTextSearch(data){
+    console.log(data);
+  }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});
   }
@@ -25,7 +28,8 @@ class App extends Component {
         <div className="searchForm">
           <div className="container">
             <div className="row">
-              <Search trangthai={this.doiTrangthai.bind(this)} hienthiForm={this.state.hienthiForm} />
+              <Search trangthai={this.doiTrangthai.bind(this)} hienthiForm={this.state.hienthiForm}
+                getTextSearch={this.getTextSearch.bind(this)} />
               <div className="col-12">
                 <hr/>
               </div>

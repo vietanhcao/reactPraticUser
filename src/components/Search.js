@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            trunggian :''
+        }
+    }
+    
     kiemtratrangthai(){
         if (this.props.hienthiForm){
             return <div onClick={this.props.trangthai} className="btn btn-secondary btn-block">Đóng lại</div>;
@@ -8,13 +15,19 @@ class Search extends Component {
             return <div onClick={this.props.trangthai} className="btn btn-info btn-block">Thêm mới</div>;
         }
     }
+    isChange(event){
+        console.log(event.target.value);
+        this.setState({
+            trunggian: event.target.value
+        });
+    }
     render() {
         return (
             <div className="col-12">
                 <div className="form-group">
                     <div className="btn-group">
-                        <input type="text" className="form-control" placeholder="nhap tu khoa" style={{ width: 600 }} />
-                        <div className="btn btn-info"> Tim </div>
+                        <input type="text" className="form-control" onChange={this.isChange.bind(this)} placeholder="nhap tu khoa" style={{ width: 600 }} />
+                        <div className="btn btn-info" onClick={this.props.getTextSearch.bind(this, this.state.trunggian)} > Tim </div>
                     </div>
                     <div>
                         {

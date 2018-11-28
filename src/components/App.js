@@ -5,12 +5,13 @@ import Header from './Header';
 import Search from './Search';
 import TableData from './TableData';
 import AddUser from './AddUser';
-
+import dataU from "./data.json";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hienthiForm : true
+      hienthiForm : true,
+      data: dataU
     }
 
   }
@@ -28,7 +29,7 @@ class App extends Component {
               <div className="col-12">
                 <hr/>
               </div>
-              <TableData />
+              <TableData data={this.state.data} />
               <AddUser hienthiForm={this.state.hienthiForm} />
             </div>
           </div>

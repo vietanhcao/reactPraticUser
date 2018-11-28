@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TableDetial from './TableDetial';
 
 class TableData extends Component {
     render() {
@@ -15,42 +16,12 @@ class TableData extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td >1</td>
-                            <td>Cao Việt Anh</td>
-                            <td>09995555</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
-                                    <div className="btn btn-danger xoa"><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Cao Việt Anh</td>
-                            <td>09995555</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
-                                    <div className="btn btn-danger xoa"><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Cao Việt Anh</td>
-                            <td>09995555</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
-                                    <div className="btn btn-danger xoa"><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
-                                </div>
-                            </td>
-                        </tr>
+                        {
+                            this.props.data.map((x, index) => <TableDetial id={index + 1} name={x.name} phone={x.phone} 
+                                permission={x.permission}  key={index}/>)
+                        }
+
+    
                     </tbody>
                 </table>
             </div>

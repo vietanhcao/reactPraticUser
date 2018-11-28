@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name": "viet anh cao",
+        "phone": "012345454",
+        "permission":1
+    },
+    {
+        "id":2,
+        "name": "viet anh cao1",
+        "phone": "012345454",
+        "permission":2
+    },
+    {
+        "id":3,
+        "name": "viet anh cao2",
+        "phone": "012345454",
+        "permission":3
+    },
+    {
+        "id":4,
+        "name": "viet anh cao3",
+        "phone": "012345454",
+        "permission":1
+    },
+    {
+        "id":5,
+        "name": "viet anh cao4",
+        "phone": "012345454",
+        "permission":1
+    }
+]

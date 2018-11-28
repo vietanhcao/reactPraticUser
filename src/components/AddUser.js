@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
 
 class AddUser extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            trangThai : true
-        }
-        this.changeTrt = this.changeTrt.bind(this);
-    }
-    hienThiNut() {
-        if (this.state.trangThai){
-            return <div onClick={this.changeTrt} className="btn btn-secondary btn-block">Đóng lại</div>
-        }else{
-            return <div onClick={this.changeTrt} className="btn btn-info btn-block">Thêm mới</div>
-        }
-    }
-    hienthiForm() {
-        if (this.state.trangThai) {
+
+    kiemtratrangthai(){
+        if (this.props.hienthiForm){
             return (
+
                 <div className="card border-primary mb-3 mt-3" style={{ maxWidth: '18rem' }}>
                     <div className="card-header">Thêm mới user</div>
                     <div className="card-body text-primary">
@@ -41,24 +29,14 @@ class AddUser extends Component {
                     </div>
                 </div>
             )
-        } 
-    }
-    changeTrt(){
-        if (this.state.trangThai) {
-            this.setState({ trangThai: false})
-        }else{
-            this.setState({ trangThai: true })
         }
     }
     render() {
         return (
             <div className="col-3">
-                {
-                    this.hienThiNut()
-                }
-                {
-                    this.hienthiForm()
-                }
+                    {
+                        this.kiemtratrangthai()
+                    }
 
             </div>
         );

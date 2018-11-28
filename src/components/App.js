@@ -7,6 +7,16 @@ import TableData from './TableData';
 import AddUser from './AddUser';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hienthiForm : true
+    }
+
+  }
+  doiTrangthai(){
+      this.setState({ hienthiForm: !this.state.hienthiForm});
+  }
   render() {
     return (
       <div>
@@ -14,12 +24,12 @@ class App extends Component {
         <div className="searchForm">
           <div className="container">
             <div className="row">
-              <Search />
+              <Search trangthai={this.doiTrangthai.bind(this)} />
               <div className="col-12">
                 <hr/>
               </div>
               <TableData />
-              <AddUser />
+              <AddUser hienthiForm={this.state.hienthiForm} />
             </div>
           </div>
         </div>

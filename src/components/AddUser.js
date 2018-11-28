@@ -15,6 +15,34 @@ class AddUser extends Component {
             return <div onClick={this.changeTrt} className="btn btn-info btn-block">Thêm mới</div>
         }
     }
+    hienthiForm() {
+        if (this.state.trangThai) {
+            return (
+                <div className="card border-primary mb-3 mt-3" style={{ maxWidth: '18rem' }}>
+                    <div className="card-header">Thêm mới user</div>
+                    <div className="card-body text-primary">
+                        <div className="form-group">
+                            <input type="text" className="form-control" placeholder="Tên user" />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" className="form-control" placeholder="Điên thoại" />
+                        </div>
+                        <div className="form-group">
+                            <select className="custom-select" >
+                                <option defaultValue={0}>chọn quyền</option>
+                                <option value={1}>admin</option>
+                                <option value={2}>moderator</option>
+                                <option value={3}>normal</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <div className="btn btn-primary btn-block">Thêm mới</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        } 
+    }
     changeTrt(){
         if (this.state.trangThai) {
             this.setState({ trangThai: false})
@@ -28,29 +56,10 @@ class AddUser extends Component {
                 {
                     this.hienThiNut()
                 }
-                <div className="card border-primary mb-3 mt-3" style={{ maxWidth: '18rem' }}>
-                    <div className="card-header">Thêm mới user</div>
-                    <div className="card-body text-primary">
-                        <div className="form-group">
-                            <input type="text" className="form-control" name id aria-describedby="helpId" placeholder="Tên user" />
-                        </div>
-                        <div className="form-group">
-                            <input type="text" className="form-control" name id aria-describedby="helpId" placeholder="Điên thoại" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor />
-                            <select className="custom-select" name id>
-                                <option selected>chọn quyền</option>
-                                <option value={1}>admin</option>
-                                <option value={2}>moderator</option>
-                                <option value={3}>normal</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <div className="btn btn-primary btn-block">Thêm mới</div>
-                        </div>
-                    </div>
-                </div>
+                {
+                    this.hienthiForm()
+                }
+
             </div>
         );
     }

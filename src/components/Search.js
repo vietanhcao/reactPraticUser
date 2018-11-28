@@ -6,7 +6,7 @@ class Search extends Component {
             <div className="col-12">
                 <div className="form-group">
                     <div className="btn-group">
-                        <input type="text" className="form-control" name id aria-describedby="helpId" placeholder="nhap tu khoa" style={{ width: 600 }} />
+                        <input type="text" className="form-control" placeholder="nhap tu khoa" style={{ width: 600 }} />
                         <div className="btn btn-info"> Tim </div>
                     </div>
                 </div>

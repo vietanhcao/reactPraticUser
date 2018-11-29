@@ -17,8 +17,7 @@ class AddUser extends Component {
         this.setState({
             [name]: value
         });
-        const item = Object.assign({}, this.state);
-        console.log(item);
+
         
     }
     kiemtratrangthai(){
@@ -42,7 +41,8 @@ class AddUser extends Component {
                             </select>
                         </div>
                         <div className="form-group">
-                            <div className="btn btn-primary btn-block">Thêm mới</div>
+                            <div className="btn btn-primary btn-block" 
+                            onClick={this.props.addUser.bind(null, this.state)} >Thêm mới</div>
                         </div>
                     </div>
                 </div>

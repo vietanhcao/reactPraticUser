@@ -21,6 +21,10 @@ class App extends Component {
       searchText: data
     });
   }
+  getDataNewUser(object){
+    const item = Object.assign({}, object);
+    console.log(item);
+  }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});
   }
@@ -39,7 +43,7 @@ class App extends Component {
                 <hr />
               </div>
               <TableData data={ketqua} />
-              <AddUser hienthiForm={this.state.hienthiForm} />
+              <AddUser hienthiForm={this.state.hienthiForm} addUser={this.getDataNewUser.bind(this)} />
             </div>
           </div>
         </div>

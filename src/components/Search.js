@@ -8,7 +8,6 @@ class Search extends Component {
             trunggian :''
         }
     }
-    
     kiemtratrangthai(){
         if (this.props.hienthiForm){
             return <div onClick={this.props.trangthai} className="btn btn-secondary btn-block">Đóng lại</div>;
@@ -24,7 +23,7 @@ class Search extends Component {
     }
     checkEditFrom(){
         if (this.props.editUserStatus){
-            return <EditUser changeUserStatus={this.props.changeUserStatus} />;
+            return <EditUser changeUserStatus={this.props.changeUserStatus} userEditUpdate={this.props.userEditUpdate} />;
         }
     }
     render() {

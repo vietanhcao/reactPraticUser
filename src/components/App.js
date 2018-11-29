@@ -13,7 +13,8 @@ class App extends Component {
       hienthiForm : true,
       data: dataU,
       searchText: '',
-      editUserStatus: false
+      editUserStatus: false,
+      userEditUpdate: {}
     }
 
   }
@@ -36,7 +37,11 @@ class App extends Component {
   }
   editUser(datauser){
     console.log('da ket noi');
-    console.log(datauser);
+    this.setState({
+      userEditUpdate: Object.assign({}, datauser)
+    });
+    console.log(this.state.userEditUpdate);
+
     
   }
   doiTrangthai(){
@@ -54,7 +59,8 @@ class App extends Component {
                 hienthiForm={this.state.hienthiForm}
                 getTextSearch={this.getTextSearch.bind(this)}
                 editUserStatus={this.state.editUserStatus}
-                changeUserStatus={this.changeUserStatus.bind(this)}  />
+                changeUserStatus={this.changeUserStatus.bind(this)}
+                userEditUpdate={this.state.userEditUpdate}  />
               <div className="col-12">
                 <hr />
               </div>

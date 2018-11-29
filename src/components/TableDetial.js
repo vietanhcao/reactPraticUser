@@ -13,6 +13,7 @@ class TableDetial extends Component {
     }
     clickEdit(){
         this.props.editUserClick();
+        this.props.changeUserStatus();
     }
     render() {
         let { id, name, phone, permission} = this.props;

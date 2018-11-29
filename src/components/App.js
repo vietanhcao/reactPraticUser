@@ -17,6 +17,11 @@ class App extends Component {
     }
 
   }
+  changeUserStatus(){
+    this.setState({
+      editUserStatus: !this.state.editUserStatus
+    });
+  }
   getTextSearch(data){
     this.setState({
       searchText: data
@@ -45,14 +50,21 @@ class App extends Component {
         <div className="searchForm">
           <div className="container">
             <div className="row">
-              <Search trangthai={this.doiTrangthai.bind(this)} hienthiForm={this.state.hienthiForm}
+              <Search trangthai={this.doiTrangthai.bind(this)} 
+                hienthiForm={this.state.hienthiForm}
                 getTextSearch={this.getTextSearch.bind(this)}
-                editUserStatus={this.state.editUserStatus} />
+                editUserStatus={this.state.editUserStatus}
+                changeUserStatus={this.changeUserStatus.bind(this)}  />
               <div className="col-12">
                 <hr />
               </div>
-              <TableData data={ketqua} editUser={this.editUser.bind(this)} />
-              <AddUser hienthiForm={this.state.hienthiForm} addUser={this.getDataNewUser.bind(this)} />
+              <TableData 
+              data={ketqua} 
+              editUser={this.editUser.bind(this)} 
+              changeUserStatus={this.changeUserStatus.bind(this)}  />
+              <AddUser 
+              hienthiForm={this.state.hienthiForm} 
+              addUser={this.getDataNewUser.bind(this)} />
             </div>
           </div>
         </div>

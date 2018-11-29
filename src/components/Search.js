@@ -24,7 +24,7 @@ class Search extends Component {
     }
     checkEditFrom(){
         if (this.props.editUserStatus){
-            return <EditUser />;
+            return <EditUser changeUserStatus={this.props.changeUserStatus} />;
         }
     }
     render() {

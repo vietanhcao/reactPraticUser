@@ -11,6 +11,9 @@ class TableDetial extends Component {
                 return "Normal";
         }
     }
+    clickEdit(){
+        this.props.editUserClick();
+    }
     render() {
         let { id, name, phone, permission} = this.props;
         return (
@@ -21,7 +24,7 @@ class TableDetial extends Component {
                 <td>{this.showPermission(Number(permission))}</td>
                 <td>
                     <div className="btn-group">
-                        <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
+                        <div onClick={this.clickEdit.bind(this)} className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
                         <div className="btn btn-danger xoa"><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
                     </div>
                 </td>

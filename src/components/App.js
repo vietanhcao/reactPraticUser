@@ -28,6 +28,10 @@ class App extends Component {
       data: this.state.data
     })
   }
+  editUser(){
+    console.log('da ket noi');
+    
+  }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});
   }
@@ -44,7 +48,7 @@ class App extends Component {
               <div className="col-12">
                 <hr />
               </div>
-              <TableData data={ketqua} />
+              <TableData data={ketqua} editUser={this.editUser.bind(this)} />
               <AddUser hienthiForm={this.state.hienthiForm} addUser={this.getDataNewUser.bind(this)} />
             </div>
           </div>

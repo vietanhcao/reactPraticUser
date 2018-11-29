@@ -18,7 +18,7 @@ class TableData extends Component {
                     <tbody>
                         {
                             this.props.data.map((x, index) => <TableDetial id={index + 1} name={x.name} phone={x.phone} 
-                                permission={x.permission}  key={index}/>)
+                                permission={x.permission} editUserClick={this.props.editUser}  key={index}/>)
                         }
 
     

@@ -27,14 +27,12 @@ class App extends Component {
     this.setState({
       data: this.state.data
     })
-    console.log(this.state.data);
   }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});
   }
   render() {
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);
-    console.log(ketqua);
     return (
       <div>
         <Header />

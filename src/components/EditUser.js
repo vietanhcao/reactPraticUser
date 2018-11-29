@@ -17,8 +17,11 @@ class EditUser extends Component {
             [name] : value
         });
     }
+    saveButton(){
+        this.props.changeUserStatus();
+        this.props.getUserEditInfo(this.state);
+    }
     render() {
-        console.log(this.state);
         return (
             <div className="card border-dark bg-warning mb-3 mt-3 col-12">
                 <div className="card-header text-center">Sửa thông tin user</div>
@@ -39,7 +42,7 @@ class EditUser extends Component {
                             </select>
                         </div>
                         <div className="form-group">
-                            <input type="reset" className="btn btn-primary btn-block" onClick={this.props.changeUserStatus}
+                            <input type="button" className="btn btn-primary btn-block" onClick={this.saveButton.bind(this)}
                                 value="sửa " />
                         </div>
                     </div>

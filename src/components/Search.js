@@ -5,7 +5,8 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            trunggian :''
+            trunggian :'',
+            userObj: {}
         }
     }
     kiemtratrangthai(){
@@ -21,9 +22,19 @@ class Search extends Component {
             trunggian: event.target.value
         });
     }
+    getUserEditInfo(data){
+        this.setState({
+            userObj: Object.assign({}, data)
+        });
+        this.props.getUserEditInfoApp(data);
+    }
     checkEditFrom(){
         if (this.props.editUserStatus){
-            return <EditUser changeUserStatus={this.props.changeUserStatus} userEditUpdate={this.props.userEditUpdate} />;
+            return <EditUser 
+            changeUserStatus={this.props.changeUserStatus} 
+            userEditUpdate={this.props.userEditUpdate} 
+            getUserEditInfo={this.getUserEditInfo.bind(this)}
+            />;
         }
     }
     render() {

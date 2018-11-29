@@ -36,16 +36,15 @@ class App extends Component {
     })
   }
   editUser(datauser){
-    console.log('da ket noi');
     this.setState({
       userEditUpdate: Object.assign({}, datauser)
-    });
-    console.log(this.state.userEditUpdate);
-
-    
+    }); 
   }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});
+  }
+  getUserEditInfoApp(data) {
+   console.log(data);
   }
   render() {
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);
@@ -60,7 +59,8 @@ class App extends Component {
                 getTextSearch={this.getTextSearch.bind(this)}
                 editUserStatus={this.state.editUserStatus}
                 changeUserStatus={this.changeUserStatus.bind(this)}
-                userEditUpdate={this.state.userEditUpdate}  />
+                userEditUpdate={this.state.userEditUpdate}
+                getUserEditInfoApp={this.getUserEditInfoApp.bind(this)}  />
               <div className="col-12">
                 <hr />
               </div>

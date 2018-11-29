@@ -16,10 +16,10 @@ class TableDetial extends Component {
         this.props.changeUserStatus();
     }
     render() {
-        let { id, name, phone, permission} = this.props;
+        let { index, name, phone, permission} = this.props;
         return (
             <tr>
-                <td>{id}</td>
+                <td>{index}</td>
                 <td>{name}</td>
                 <td>{phone}</td>
                 <td>{this.showPermission(Number(permission))}</td>

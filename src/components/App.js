@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       hienthiForm : true,
       data: dataU,
+      searchText: ''
     }
 
   }
@@ -28,16 +29,16 @@ class App extends Component {
     console.log(ketqua);
     return (
       <div>
-          <Header />
+        <Header />
         <div className="searchForm">
           <div className="container">
             <div className="row">
               <Search trangthai={this.doiTrangthai.bind(this)} hienthiForm={this.state.hienthiForm}
                 getTextSearch={this.getTextSearch.bind(this)} />
               <div className="col-12">
-                <hr/>
+                <hr />
               </div>
-              <TableData data={this.state.data} />
+              <TableData data={ketqua} />
               <AddUser hienthiForm={this.state.hienthiForm} />
             </div>
           </div>

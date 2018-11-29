@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 
 class AddUser extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id:"",
+            name:"",
+            phone:"",
+            permission:""
+        }
+    }
+    
     isChange(event) {
         let name = event.target.name;
         let value = event.target.value;
-
-        console.log(name, value);
+        this.setState({
+            [name]: value
+        });
+        const item = Object.assign({}, this.state);
+        console.log(item);
         
     }
     kiemtratrangthai(){
         if (this.props.hienthiForm){
             return (
-
                 <div className="card border-primary mb-3 mt-3" style={{ maxWidth: '18rem' }}>
                     <div className="card-header">Thêm mới user</div>
                     <div className="card-body text-primary">
@@ -43,7 +55,6 @@ class AddUser extends Component {
                     {
                         this.kiemtratrangthai()
                     }
-
             </div>
         );
     }

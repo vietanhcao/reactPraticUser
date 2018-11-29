@@ -28,8 +28,9 @@ class App extends Component {
       data: this.state.data
     })
   }
-  editUser(){
+  editUser(datauser){
     console.log('da ket noi');
+    console.log(datauser);
     
   }
   doiTrangthai(){

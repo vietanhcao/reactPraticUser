@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EditUser from './EditUser';
 
 class Search extends Component {
     constructor(props) {
@@ -21,9 +22,19 @@ class Search extends Component {
             trunggian: event.target.value
         });
     }
+    checkEditFrom(){
+        if (this.props.editUserStatus){
+            return <EditUser />;
+        }
+    }
     render() {
         return (
             <div className="col-12">
+                <div className="row">
+                {
+                    this.checkEditFrom()
+                }
+                </div>
                 <div className="form-group">
                     <div className="btn-group">
                         <input type="text" className="form-control" onKeyUp={this.props.getTextSearch.bind(this, this.state.trunggian)} onChange={this.isChange.bind(this)} placeholder="nhap tu khoa" style={{ width: 600 }} />

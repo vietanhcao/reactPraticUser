@@ -23,7 +23,11 @@ class App extends Component {
   }
   getDataNewUser(object){
     const item = Object.assign({}, object);
-    console.log(item);
+    this.state.data.push(item);
+    this.setState({
+      data: this.state.data
+    })
+    console.log(this.state.data);
   }
   doiTrangthai(){
       this.setState({ hienthiForm: !this.state.hienthiForm});

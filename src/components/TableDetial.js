@@ -18,7 +18,7 @@ class TableDetial extends Component {
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{phone}</td>
-                <td>{this.showPermission(permission)}</td>
+                <td>{this.showPermission(Number(permission))}</td>
                 <td>
                     <div className="btn-group">
                         <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>

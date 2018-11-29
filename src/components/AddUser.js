@@ -10,14 +10,13 @@ class AddUser extends Component {
             permission:""
         }
     }
-    
+
     isChange(event) {
         let name = event.target.name;
         let value = event.target.value;
         this.setState({
             [name]: value
         });
-
         
     }
     kiemtratrangthai(){

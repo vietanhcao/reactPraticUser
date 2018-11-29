@@ -4,11 +4,11 @@ class TableDetial extends Component {
     showPermission(x) {
         switch (x) {
             case 1:
-                return "User";
+                return "admin";
             case 2:
-                return "Admin";
+                return "Moderator";
             default:
-                return "Manager";
+                return "Normal";
         }
     }
     render() {

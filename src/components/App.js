@@ -66,7 +66,7 @@ class App extends Component {
   }
   render() {
     localStorage.setItem('userData', JSON.stringify(this.state.data));
-    let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);
+    let ketqua = this.state.data.filter(item => item.name.toUpperCase().indexOf(this.state.searchText.toUpperCase()) !== -1);
     return (
       <div>
         <Header />

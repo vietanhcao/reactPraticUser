@@ -35,15 +35,15 @@ class AddUser extends Component {
                     <form action="">
                         <div className="card-body text-primary">
                             <div className="form-group">
-                                <input type="text" name="name" onChange={this.isChange.bind(this)} className="form-control" placeholder="Tên user" />
+                                <input type="text" name="name" onChange={this.isChange.bind(this)} className="form-control" placeholder="Tên user" required />
                             </div>
                             <div className="form-group">
-                                <input type="text" name="phone" onChange={this.isChange.bind(this)} className="form-control" placeholder="Điên thoại" />
+                                <input type="number" name="phone" onChange={this.isChange.bind(this)} className="form-control" placeholder="Điên thoại" required />
                             </div>
                             <div className="form-group">
-                                <select className="custom-select" name="permission" onChange={this.isChange.bind(this)} >
+                                <select className="custom-select" name="permission" onChange={this.isChange.bind(this)} required  >
                                     <option defaultValue=''>chọn quyền</option>
-                                    <option value={1}>Admin</option>
+                                    <option value={1}  >Admin</option>
                                     <option value={2}>Moderator</option>
                                     <option value={3}>Normal</option>
                                 </select>

@@ -22,7 +22,7 @@ class TableDetial extends Component {
         let { index, name, phone, permission} = this.props;
         return (
             <tr>
-                <td>{index}</td>
+                <td className="pl-4">{index}</td>
                 <td>{name}</td>
                 <td>{phone}</td>
                 <td>{this.showPermission(Number(permission))}</td>

@@ -44,7 +44,13 @@ class App extends Component {
       this.setState({ hienthiForm: !this.state.hienthiForm});
   }
   getUserEditInfoApp(data) {
-   console.log(data);
+    this.state.data.forEach((value, key) => {
+      if( value.id === data.id){
+        value.name = data.name;
+        value.phone = data.phone;
+        value.permission = data.permission;
+      }
+    });
   }
   render() {
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);

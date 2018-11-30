@@ -15,6 +15,9 @@ class TableDetial extends Component {
         this.props.editUserClick();
         this.props.changeUserStatus();
     }
+    deleteClick(idUser){
+        this.props.deleteClick(idUser);
+    }
     render() {
         let { index, name, phone, permission} = this.props;
         return (
@@ -26,7 +29,8 @@ class TableDetial extends Component {
                 <td>
                     <div className="btn-group">
                         <div onClick={this.clickEdit.bind(this)} className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
-                        <div className="btn btn-danger xoa"><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
+                        <div className="btn btn-danger xoa"
+                        onClick={this.deleteClick.bind(this, this.props.id)}><i className="fa fa-remove" aria-hidden="true" /> Xóa</div>
                     </div>
                 </td>
             </tr>

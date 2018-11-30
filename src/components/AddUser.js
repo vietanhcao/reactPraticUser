@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import shortid from 'shortid';
 class AddUser extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +15,8 @@ class AddUser extends Component {
         let name = event.target.name;
         let value = event.target.value;
         this.setState({
-            [name]: value
+            [name]: value,
+            id: shortid.generate()
         });
         
     }

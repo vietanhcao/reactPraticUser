@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import '../components/App';
 import Header from './Header';
 import Search from './Search';
@@ -52,6 +51,9 @@ class App extends Component {
       }
     });
   }
+  deleteClick(data){
+    console.log(data);
+  }
   render() {
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);
     return (
@@ -73,7 +75,8 @@ class App extends Component {
               <TableData 
               data={ketqua} 
               editUser={this.editUser.bind(this)} 
-              changeUserStatus={this.changeUserStatus.bind(this)}  />
+              changeUserStatus={this.changeUserStatus.bind(this)}
+              deleteClick={this.deleteClick.bind(this)}  />
               <AddUser 
               hienthiForm={this.state.hienthiForm} 
               addUser={this.getDataNewUser.bind(this)} />

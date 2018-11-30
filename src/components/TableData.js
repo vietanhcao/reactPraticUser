@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import TableDetial from './TableDetial';
 
 class TableData extends Component {
+    deleteClick(data){
+        this.props.deleteClick(data);
+        
+    }
     render() {
         return (
             <div className="col-9">
@@ -18,7 +22,9 @@ class TableData extends Component {
                     <tbody>
                         {
                             this.props.data.map((x, index) => <TableDetial index={index + 1} name={x.name} phone={x.phone} 
-                                permission={x.permission} editUserClick={this.props.editUser.bind(null, x)}  key={index}
+                                permission={x.permission} editUserClick={this.props.editUser.bind(null, x)}  id={x.id}
+                                key={index}
+                                deleteClick={this.deleteClick.bind(this)}
                                 changeUserStatus={this.props.changeUserStatus}
                                 />)
                         }

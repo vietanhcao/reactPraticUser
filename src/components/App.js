@@ -52,7 +52,9 @@ class App extends Component {
     });
   }
   deleteClick(data){
-    console.log(data);
+    this.setState({
+      data: this.state.data.filter((value, index) => value.id !== data)
+    });
   }
   render() {
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);

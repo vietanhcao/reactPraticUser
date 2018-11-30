@@ -20,10 +20,17 @@ class AddUser extends Component {
         });
         
     }
+    kiemtratrangthaiButton() {
+        if (this.props.hienthiForm) {
+            return <div onClick={this.props.trangthai} className="btn btn-secondary btn-block">Đóng lại</div>;
+        } else {
+            return <div onClick={this.props.trangthai} className="btn btn-info btn-block">Thêm mới</div>;
+        }
+    }
     kiemtratrangthai(){
         if (this.props.hienthiForm){
             return (
-                <div className="card border-primary mb-3 mt-3" style={{ maxWidth: '18rem' }}>
+                <div className="card border-primary mb-3 mt-3">
                     <div className="card-header">Thêm mới user</div>
                     <form action="">
                         <div className="card-body text-primary">
@@ -53,10 +60,15 @@ class AddUser extends Component {
     }
     render() {
         return (
-            <div className="col-3">
-                    {
-                        this.kiemtratrangthai()
-                    }
+            <div className="col-lg-3 col-12">
+
+                {
+                    this.kiemtratrangthaiButton()
+                }
+
+                {
+                    this.kiemtratrangthai()
+                }
             </div>
         );
     }

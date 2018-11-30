@@ -73,7 +73,7 @@ class App extends Component {
         <div className="searchForm">
           <div className="container">
             <div className="row">
-              <Search trangthai={this.doiTrangthai.bind(this)} 
+              <Search  
                 hienthiForm={this.state.hienthiForm}
                 getTextSearch={this.getTextSearch.bind(this)}
                 editUserStatus={this.state.editUserStatus}
@@ -89,6 +89,7 @@ class App extends Component {
               changeUserStatus={this.changeUserStatus.bind(this)}
               deleteClick={this.deleteClick.bind(this)}  />
               <AddUser 
+              trangthai={this.doiTrangthai.bind(this)}
               hienthiForm={this.state.hienthiForm} 
               addUser={this.getDataNewUser.bind(this)} />
             </div>

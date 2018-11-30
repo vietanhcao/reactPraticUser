@@ -8,7 +8,7 @@ class TableData extends Component {
     }
     render() {
         return (
-            <div className="col-9">
+            <div className="col-12 col-lg-9">
                 <table className="table table-striped table-hover table-{1:striped|sm|bordered|hover|inverse} ">
                     <thead>
                         <tr>

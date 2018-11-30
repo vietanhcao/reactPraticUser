@@ -47,7 +47,7 @@ class Search extends Component {
                 </div>
                 <div className="form-group">
                     <div className="btn-group">
-                        <input type="text" className="form-control" onKeyUp={this.props.getTextSearch.bind(this, this.state.trunggian)} onChange={this.isChange.bind(this)} placeholder="nhap tu khoa" style={{ width: 600 }} />
+                        <input type="text" className="form-control" onKeyUp={this.props.getTextSearch.bind(this, this.state.trunggian)} onChange={this.isChange.bind(this)} placeholder="nhập tên cần tìm" style={{ width: 600 }} />
                         <div className="btn btn-info" onClick={this.props.getTextSearch.bind(this, this.state.trunggian)} > Tim </div>
                     </div>
                     <div>

@@ -15,7 +15,15 @@ class App extends Component {
       editUserStatus: false,
       userEditUpdate: {}
     }
-
+  }
+  componentWillMount() {
+    if (localStorage.getItem('userData') !== null){
+      this.setState({
+        data: JSON.parse(localStorage.getItem('userData'))
+      });
+    }else{
+      localStorage.setItem('userData', JSON.stringify(dataU));
+    }
   }
   changeUserStatus(){
     this.setState({
@@ -57,6 +65,7 @@ class App extends Component {
     });
   }
   render() {
+    localStorage.setItem('userData', JSON.stringify(this.state.data));
     let ketqua = this.state.data.filter( item => item.name.indexOf(this.state.searchText) !== -1);
     return (
       <div>
